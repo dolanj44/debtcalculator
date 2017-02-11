@@ -1,0 +1,52 @@
+<!-- views/index.ejs -->
+<!doctype html>
+<html>
+<head>
+    <% include ../views/partials/head %>
+</head>
+<body class="container">
+<header>
+<% include ../views/partials/header %>
+</header>
+<div>
+
+	<!--<div class="jumbotron text-center">-->
+		<!--<h1><span class="fa fa-lock"></span> Node Authentication</h1>-->
+
+		<!--<p>Login or Register with:</p>-->
+
+		<!--<a href="/login" class="btn btn-default"><span class="fa fa-user"></span> Local Login</a>-->
+		<!--<a href="/signup" class="btn btn-default"><span class="fa fa-user"></span> Local Signup</a>-->
+		<!--<a href="/auth/facebook" class="btn btn-primary"><span class="fa fa-facebook"></span> Facebook</a>-->
+	<!--</div>-->
+	<!--<div>-->
+	<table class="table table-striped table-bordered table-responsive">
+		<thead>
+		<tr>
+			<td>Bank Name</td>
+			<td>Account</td>
+			<td>Balance</td>
+			<td>Rate</td>
+			<td>Minimum</td>
+		</tr>
+		</thead>
+		<% quotation.forEach(function(p,i1){%>
+		<tr>
+			<td><input class="form-control" data-bindto="quotation[<%=i1%>].bank_name" value="<%=quotation[i1].bank_name %>"></td>
+			<td><input class="form-control" data-bindto="quotation[<%=i1%>].currency" value="<%=quotation[i1].acct %>"></td>
+			<td><input class="form-control" data-bindto="quotation[<%=i1%>].quantity" value="<%=quotation[i1].balance %>"></td>
+			<td><input class="form-control" data-bindto="quotation[<%=i1%>].currency" value="<%=quotation[i1].rate %>"></td>
+			<td><input class="form-control" data-bindto="quotation[<%=i1%>].quantity" value="<%=quotation[i1].minimum %>"></td>
+		</tr>
+		<% }); %>
+		<tr>
+			<td colspan="4">
+				<button id="addRowBtn" class="btn btn-default">Add Row</button>
+			</td>
+		</tr>
+	</table>
+	</div>
+
+</div>
+</body>
+</html>

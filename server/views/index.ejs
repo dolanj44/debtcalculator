@@ -1,0 +1,44 @@
+<!-- views/index.ejs -->
+<!doctype html>
+<html>
+<head>
+    <% include ../views/partials/head %>
+</head>
+<body>
+<header>
+<% include ../views/partials/header %>
+</header>
+<div class="jumbotron">
+	<div class="container">
+		<div class="col-md-8">
+		The <strong>Debt Attacker</strong> Calculator will help you organize your credit card debts and pay them all off in the most efficient way, saving you thousands.
+		</div>
+	</div>
+</div>
+<div class="container">
+	<div class="col-md-8" ng-app="myApp" ng-controller="myCtrl">
+		First Name: <input type="text" ng-model="counter"><br>
+	<table>
+		<tr>
+		  <th>Bank Name</th>
+		  <th>Acct#</th>
+		  <th>Balance</th>
+		  <th>Interest</th>
+		</tr>
+	    <tr ng-repeat="account in rows">
+	        <td><input type="text" placeholder="Enter parker" size="30"/></td>
+	        <td><input type="text" placeholder="Enter Acct#" size="30"/></td>
+	        <td><input type="text" placeholder="Enter Balance" size="30"/></td>
+	        <td><input type="text" placeholder="Enter Interest Rate" size="30"/></td>
+	    </tr>
+	</table>
+	<button ng-click="addAcct()" type="button" class="btn btn-success">+</button>
+	</div>
+</div>
+
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
+<script src="/js/app.js"></script>
+</body>
+</html>
